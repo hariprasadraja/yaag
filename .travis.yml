@@ -1,7 +1,15 @@
 language: go
 
 go:
-  - 1.8
+  - 1.11
 
-script: cd yaag && go test
+env:
+    global:
+        - GO111MODULE=on
+
+install: true
+
+script:
+      - go build ./...
+      - go test ./...
 
